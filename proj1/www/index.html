@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function iniciar() {
+        var dictUsers = {};
+        dictUsers["xavi"] = "1234";
+        dictUsers["iker"] = "123456";
+        dictUsers["pepe"] = "hola";
+
+        let objNameUsers = Object.keys(dictUsers);
+            let objPwdUsers = Object.values(dictUsers);
+            let nameUser = document.getElementById("user").value;
+            let pwdUser = document.getElementById("passwordLogin").value;
+            let booleanName = false;
+            for (let i = 0; i < objNameUsers.length; i++) {
+                if(nameUser == objNameUsers[i] && pwdUser == objPwdUsers[i]){
+                    booleanName = true;
+                }
+            }
+            if(booleanName){
+                alert("Has iniciado sesión");
+            }
+            else{
+                alert("Usuario o contraseña incorrecto");
+            }
+        }
+
+        function register() {
+            
+        }
+
+
+    </script>
+    <h1>LOGIN</h1>
+    <form action="">
+
+        User: <input type="text" id="user" placeholder="user">
+        <br>
+        <br>
+        Password: <input type="password" id="passwordLogin" placeholder="password">
+        <br>
+        <input type="submit" name="submit" onclick=iniciar()>
+
+    </form>
+    <h1>REGISTER</h1>
+    <form>
+
+        User: <input type="text" name="userRegister" placeholder="user">
+        <br>
+        <br>
+        Email: <input type="email" name="emailRegister" placeholder="user">
+        <br>
+        <br>
+        Password: <input type="password" name="passwordRegister" placeholder="password">
+        <br>
+        <input type="submit" name="submit">
+
+    </form>
+</body>
+</html>
